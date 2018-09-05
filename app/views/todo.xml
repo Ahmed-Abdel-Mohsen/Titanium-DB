@@ -1,7 +1,8 @@
 <Alloy>
-    <Tab title="Todo">
-    	    <Window id="todoWin" title="Todo" class="container">
-    	    	    <TableView id="todoTable" />
-    	    </Window>
-    </Tab>
+	<Tab title="Todo">
+		<Window id="todoWin" title="Todo" class="container">
+			<TableView id="todoTable" />
+			<Button id="addBtn" onClick="add"></Button>
+		</Window>
+	</Tab>
 </Alloy>

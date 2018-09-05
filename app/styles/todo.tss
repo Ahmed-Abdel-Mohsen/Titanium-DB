@@ -1,3 +1,14 @@
 ".container": {
 	backgroundColor: "white"
 }
+
+"#addBtn": {
+	title: "+",
+	onClick: "add",
+	right: "16dp",
+	bottom: "16dp",
+	borderRadius: "120dp",
+	width: "48dp",
+	height: "48dp",
+	backgroundColor: "Black"
+}

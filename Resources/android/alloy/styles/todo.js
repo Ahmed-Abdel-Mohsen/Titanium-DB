@@ -1,0 +1,1 @@
+module.exports = [{"isClass":true,"priority":10000.0009,"key":"container","style":{backgroundColor:"white",}},{"isId":true,"priority":100000.001,"key":"addBtn","style":{title:"+",onClick:"add",right:"16dp",bottom:"16dp",borderRadius:"120dp",width:"48dp",height:"48dp",backgroundColor:"Black",}}];
