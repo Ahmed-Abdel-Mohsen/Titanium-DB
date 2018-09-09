@@ -38,10 +38,13 @@ function Controller() {
 	$.__views.todoWin = Ti.UI.createWindow(
 	{ backgroundColor: "white", id: "todoWin", title: "Todo" });
 
-	$.__views.todoTable = Ti.UI.createTableView(
-	{ id: "todoTable" });
+	var __alloyId6 = {};var __alloyId9 = [];var __alloyId11 = { type: 'Ti.UI.View', childTemplates: function () {var __alloyId12 = [];var __alloyId13 = { type: 'Ti.UI.Label', bindId: 'taskTitle', properties: { bindId: "taskTitle" } };__alloyId12.push(__alloyId13);var __alloyId14 = { type: 'Ti.UI.Label', bindId: 'taskDescription', properties: { bindId: "taskDescription" } };__alloyId12.push(__alloyId14);var __alloyId15 = { type: 'Ti.UI.Label', bindId: 'taskImage', properties: { bindId: "taskImage" } };__alloyId12.push(__alloyId15);var __alloyId16 = { type: 'Ti.UI.Label', bindId: 'taskPriority', properties: { bindId: "taskPriority" } };__alloyId12.push(__alloyId16);return __alloyId12;}(), properties: { layout: "vertical" } };__alloyId9.push(__alloyId11);var __alloyId8 = { properties: { name: "elementTemplate" }, childTemplates: __alloyId9 };__alloyId6["elementTemplate"] = __alloyId8;$.__views.__alloyId17 = Ti.UI.createListSection(
+	{ id: "__alloyId17" });
 
-	$.__views.todoWin.add($.__views.todoTable);
+	var __alloyId19 = [];__alloyId19.push($.__views.__alloyId17);$.__views.__alloyId5 = Ti.UI.createListView(
+	{ sections: __alloyId19, templates: __alloyId6, defaultItemTemplate: "elementTemplate", id: "__alloyId5" });
+
+	$.__views.todoWin.add($.__views.__alloyId5);
 	$.__views.addBtn = Ti.UI.createButton(
 	{ title: "+", onClick: "add", right: "16dp", bottom: "16dp", borderRadius: "120dp", width: "48dp", height: "48dp", backgroundColor: "Black", id: "addBtn" });
 
@@ -73,15 +76,8 @@ function Controller() {
 		var rows = [],
 		i = 0,
 		len = _rows.length;
-
 		for (; i < len; i++) {
 			rows.push(Ti.UI.createTableViewRow(_rows[i]));
-
-
-
-
-
-
 		}
 		this.setData(rows);
 	};

@@ -2,8 +2,13 @@ var todos = require('collection');
 
 $.addBtn.addEventListener('click', function() {
 	// add todo item
-	var item = $.itemField.value;
-	todos.add(item);
+	var task = {
+		title: $.titleField.value,
+		description: $.descriptionField.value,
+		image: $.imageField.value,
+		priority: $.priorityField.value
+	};
+	todos.add(task);
 
 	$.addWin.close();
 });

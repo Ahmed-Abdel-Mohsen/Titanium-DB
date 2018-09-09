@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app 
-  xmlns:ti="http://ti.appcelerator.org">
-  <deployment-targets>
-    <target device="iphone">true</target>
-    <target device="ipad">true</target>
-    <target device="android">true</target>
-  </deployment-targets>
-  <sdk-version>7.1.0.GA</sdk-version>
-  <id>com.appcelerator.todolistalloy</id>
-  <name>TodoListAlloy</name>
-  <version>1.0</version>
-  <publisher>adecena</publisher>
-  <description>not specified</description>
-  <copyright>2012 by adecena</copyright>
-  <icon>appicon.png</icon>
-  <persistent-wifi>false</persistent-wifi>
-  <prerendered-icon>false</prerendered-icon>
-  <statusbar-style>default</statusbar-style>
-  <statusbar-hidden>false</statusbar-hidden>
-  <fullscreen>false</fullscreen>
-  <navbar-hidden>false</navbar-hidden>
-  <analytics>true</analytics>
-  <guid>043742b2-c2bb-4608-9ddd-10f6b2798805</guid>
-  <property name="ti.ui.defaultunit">dp</property>
-  <iphone>
-    <orientations device="iphone">
-      <orientation>Ti.UI.PORTRAIT</orientation>
-    </orientations>
-    <orientations device="ipad">
-      <orientation>Ti.UI.PORTRAIT</orientation>
-      <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
-      <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
-      <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
-    </orientations>
-  </iphone>
-  <android 
-    xmlns:android="http://schemas.android.com/apk/res/android"/>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <url>http://</url>
+    <deployment-targets>
+        <target device="iphone">true</target>
+        <target device="ipad">true</target>
+        <target device="android">true</target>
+    </deployment-targets>
+    <sdk-version>7.1.0.GA</sdk-version>
+    <id>com.appcelerator.todolistalloy</id>
+    <name>TodoListAlloy</name>
+    <version>1.0</version>
+    <publisher>adecena</publisher>
+    <description>not specified</description>
+    <copyright>2012 by adecena</copyright>
+    <icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>043742b2-c2bb-4608-9ddd-10f6b2798805</guid>
+    <property name="ti.ui.defaultunit">dp</property>
+    <iphone>
+        <orientations device="iphone">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+        </orientations>
+        <orientations device="ipad">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+            <orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+            <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+        </orientations>
+    </iphone>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
     <!--<modules>
       <module platform="android" version="1.0">ti.physicalSizeCategory</module>
     </modules>-->
     <plugins>
-      <plugin version="1.2.2">ti.alloy</plugin>
+        <plugin version="1.2.2">ti.alloy</plugin>
     </plugins>
     <property name="appc-app-id" type="string">5b8fd1a3a666b4755ddc6fec</property>
-  </ti:app>
+</ti:app>

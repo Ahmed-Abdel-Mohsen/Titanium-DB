@@ -39,10 +39,22 @@ function Controller() {
 	{ backgroundColor: "white", layout: "vertical", id: "addWin", title: "Add Item", modal: true });
 
 	$.__views.addWin && $.addTopLevelView($.__views.addWin);
-	$.__views.itemField = Ti.UI.createTextField(
-	{ width: "90%", top: 55, borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, returnKeyType: Ti.UI.RETURNKEY_DONE, id: "itemField", hintText: "What do you need to do?", hintTextColor: "#000", color: "#000" });
+	$.__views.titleField = Ti.UI.createTextField(
+	{ id: "titleField", hintText: "Title", hintTextColor: "#d3d3d3", color: "#000" });
 
-	$.__views.addWin.add($.__views.itemField);
+	$.__views.addWin.add($.__views.titleField);
+	$.__views.descriptionField = Ti.UI.createTextField(
+	{ id: "descriptionField", hintText: "Description", hintTextColor: "#d3d3d3", color: "#000" });
+
+	$.__views.addWin.add($.__views.descriptionField);
+	$.__views.imageField = Ti.UI.createTextField(
+	{ id: "imageField", hintText: "Image path", hintTextColor: "#d3d3d3", color: "#000" });
+
+	$.__views.addWin.add($.__views.imageField);
+	$.__views.priorityField = Ti.UI.createTextField(
+	{ id: "priorityField", hintText: "Priority", hintTextColor: "#d3d3d3", color: "#000" });
+
+	$.__views.addWin.add($.__views.priorityField);
 	$.__views.addBtn = Ti.UI.createButton(
 	{ width: "50%", top: 20, title: 'Add Item', id: "addBtn" });
 
@@ -63,8 +75,13 @@ function Controller() {
 
 	$.addBtn.addEventListener('click', function () {
 
-		var item = $.itemField.value;
-		todos.add(item);
+		var task = {
+			title: $.titleField.value,
+			description: $.descriptionField.value,
+			image: $.imageField.value,
+			priority: $.priorityField.value };
+
+		todos.add(task);
 
 		$.addWin.close();
 	});

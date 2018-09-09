@@ -2,8 +2,10 @@ exports.definition = {
 
 	config: {
 		"columns": {
-			"item":"text",
-			"done":"integer"
+			"title":"text",
+			"description":"text",
+			"image":"text",
+			"priority":"integer"
 		},
 		"adapter": {
 			"type":"sql",
@@ -36,7 +38,6 @@ exports.definition = {
 		return Model;
 	},
 
-
 	extendCollection: function(Collection) {
 		_.extend(Collection.prototype, {
 
@@ -47,5 +48,5 @@ exports.definition = {
 		return Collection;
 	}
 
-}
+};
 

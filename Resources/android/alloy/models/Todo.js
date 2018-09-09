@@ -7,8 +7,10 @@ exports.definition = {
 
 	config: {
 		"columns": {
-			"item": "text",
-			"done": "integer"
+			"title": "text",
+			"description": "text",
+			"image": "text",
+			"priority": "integer"
 		},
 		"adapter": {
 			"type": "sql",
@@ -47,26 +49,7 @@ exports.definition = {
 
 };
 
-model = Alloy.M('todo', exports.definition, [function (migration) {
-	migration.name = 'todo';
-	migration.id = '201209160140519';
-	migration.up = function (db) {
-		db.createTable({
-			"columns": {
-				"item": "text",
-				"done": "integer"
-			},
-			"adapter": {
-				"type": "sql",
-				"collection_name": "todo"
-			}
-		});
-	};
-
-	migration.down = function (db) {
-		db.dropTable("todo");
-	};
-}]);
+model = Alloy.M('todo', exports.definition, []);
 
 collection = Alloy.C('todo', exports.definition, model);
 
