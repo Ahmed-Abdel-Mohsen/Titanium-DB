@@ -1,19 +1,22 @@
 <Alloy>
 	<Tab title="Todo">
 		<Window id="todoWin" title="Todo" class="container">
-			<ListView defaultItemTemplate="elementTemplate">
+			<ListView id="listView" defaultItemTemplate="elementTemplate">
 				<Templates>
 					<ItemTemplate name="elementTemplate">
-						<View layout="vertical">
-							<Label bindId="taskTitle" id="title" />
-							<Label bindId="taskDescription" id="description" />
-							<Label bindId="taskImage" id="image" />
-							<Label bindId="taskPriority" id="priority" />
+						<View id="container">
+							<View id="taskContainer" layout="vertical">
+								<Label bindId="taskTitle" id="title" />
+								<Label bindId="taskDescription" id="description" />
+								<Label bindId="taskImage" id="image" />
+								<Label bindId="taskPriority" id="priority" />
+								<View id="horizontalLine"></View>
+							</View>
+							<Button id="deleteBtn"></Button>
 						</View>
 					</ItemTemplate>
 				</Templates>
-				<ListSection>
-				</ListSection>
+				<ListSection></ListSection>
 			</ListView>
 			<Button id="addBtn" onClick="add"></Button>
 		</Window>

@@ -12,3 +12,27 @@
 	height: "48dp",
 	backgroundColor: "Black"
 }
+"#container" : {
+	height:Titanium.UI.SIZE
+}
+"#taskContainer" : {
+	height:Titanium.UI.SIZE
+}
+"Label":{
+	color:"#000"
+}
+"#horizontalLine" : {
+	width:Titanium.UI.FILL,
+	height:"2dp",
+	backgroundColor: "#d3d3d3",
+	top:"6dp"
+}
+
+"#deleteBtn" :{
+	title:"-",
+	color:"#fff",
+	backgroundColor:"#000",
+	left:"50dp",
+	width:"40dp",
+	height:"20dp"
+}

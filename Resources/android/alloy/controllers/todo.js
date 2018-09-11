@@ -38,13 +38,13 @@ function Controller() {
 	$.__views.todoWin = Ti.UI.createWindow(
 	{ backgroundColor: "white", id: "todoWin", title: "Todo" });
 
-	var __alloyId6 = {};var __alloyId9 = [];var __alloyId11 = { type: 'Ti.UI.View', childTemplates: function () {var __alloyId12 = [];var __alloyId13 = { type: 'Ti.UI.Label', bindId: 'taskTitle', properties: { bindId: "taskTitle" } };__alloyId12.push(__alloyId13);var __alloyId14 = { type: 'Ti.UI.Label', bindId: 'taskDescription', properties: { bindId: "taskDescription" } };__alloyId12.push(__alloyId14);var __alloyId15 = { type: 'Ti.UI.Label', bindId: 'taskImage', properties: { bindId: "taskImage" } };__alloyId12.push(__alloyId15);var __alloyId16 = { type: 'Ti.UI.Label', bindId: 'taskPriority', properties: { bindId: "taskPriority" } };__alloyId12.push(__alloyId16);return __alloyId12;}(), properties: { layout: "vertical" } };__alloyId9.push(__alloyId11);var __alloyId8 = { properties: { name: "elementTemplate" }, childTemplates: __alloyId9 };__alloyId6["elementTemplate"] = __alloyId8;$.__views.__alloyId17 = Ti.UI.createListSection(
-	{ id: "__alloyId17" });
+	var __alloyId5 = {};var __alloyId8 = [];var __alloyId9 = { type: 'Ti.UI.View', childTemplates: function () {var __alloyId10 = [];var __alloyId11 = { type: 'Ti.UI.View', childTemplates: function () {var __alloyId12 = [];var __alloyId13 = { type: 'Ti.UI.Label', bindId: 'taskTitle', properties: { color: "#000", bindId: "taskTitle" } };__alloyId12.push(__alloyId13);var __alloyId14 = { type: 'Ti.UI.Label', bindId: 'taskDescription', properties: { color: "#000", bindId: "taskDescription" } };__alloyId12.push(__alloyId14);var __alloyId15 = { type: 'Ti.UI.Label', bindId: 'taskImage', properties: { color: "#000", bindId: "taskImage" } };__alloyId12.push(__alloyId15);var __alloyId16 = { type: 'Ti.UI.Label', bindId: 'taskPriority', properties: { color: "#000", bindId: "taskPriority" } };__alloyId12.push(__alloyId16);var __alloyId17 = { type: 'Ti.UI.View', properties: { width: Titanium.UI.FILL, height: "2dp", backgroundColor: "#d3d3d3", top: "6dp" } };__alloyId12.push(__alloyId17);return __alloyId12;}(), properties: { height: Titanium.UI.SIZE, layout: "vertical" } };__alloyId10.push(__alloyId11);var __alloyId18 = { type: 'Ti.UI.Button', properties: { title: "-", color: "#fff", backgroundColor: "#000", left: "50dp", width: "40dp", height: "20dp" } };__alloyId10.push(__alloyId18);return __alloyId10;}(), properties: { height: Titanium.UI.SIZE } };__alloyId8.push(__alloyId9);var __alloyId7 = { properties: { name: "elementTemplate" }, childTemplates: __alloyId8 };__alloyId5["elementTemplate"] = __alloyId7;$.__views.__alloyId19 = Ti.UI.createListSection(
+	{ id: "__alloyId19" });
 
-	var __alloyId19 = [];__alloyId19.push($.__views.__alloyId17);$.__views.__alloyId5 = Ti.UI.createListView(
-	{ sections: __alloyId19, templates: __alloyId6, defaultItemTemplate: "elementTemplate", id: "__alloyId5" });
+	var __alloyId21 = [];__alloyId21.push($.__views.__alloyId19);$.__views.listView = Ti.UI.createListView(
+	{ sections: __alloyId21, templates: __alloyId5, id: "listView", defaultItemTemplate: "elementTemplate" });
 
-	$.__views.todoWin.add($.__views.__alloyId5);
+	$.__views.todoWin.add($.__views.listView);
 	$.__views.addBtn = Ti.UI.createButton(
 	{ title: "+", onClick: "add", right: "16dp", bottom: "16dp", borderRadius: "120dp", width: "48dp", height: "48dp", backgroundColor: "Black", id: "addBtn" });
 
@@ -72,27 +72,31 @@ function Controller() {
 		todos.fetch();
 	});
 
-	$.todoTable.updateContent = function (_rows) {
-		var rows = [],
-		i = 0,
-		len = _rows.length;
-		for (; i < len; i++) {
-			rows.push(Ti.UI.createTableViewRow(_rows[i]));
-		}
-		this.setData(rows);
-	};
-
-	$.todoTable.addEventListener('click', function (e) {
-		Ti.API.info('Title: ' + e.rowData.title);
+	Ti.App.addEventListener('app:init_list', function (_collection) {
+		Ti.API.info("INIT LIST: " + JSON.stringify(_collection.todos));
+		$.listView.sections[0].setItems(_collection.todos);
 	});
 
-	Ti.App.addEventListener('app:update_list', function (_collection) {
-		Ti.API.info("UPDATE LIST: " + JSON.stringify(_collection.todos));
-		_collection.todos.forEach(function (row) {
-			row.color = "#000";
-		});
-		$.todoTable.updateContent(_collection.todos);
-	});
+	function destroy() {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

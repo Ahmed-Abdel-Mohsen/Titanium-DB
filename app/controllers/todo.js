@@ -6,9 +6,18 @@ function add() {
 }
 
 $.todoWin.addEventListener('focus', function() {
-	todos.fetch();
+	todos.fetch();	
 });
 
+Ti.App.addEventListener('app:init_list', function(_collection) {
+	Ti.API.info("INIT LIST: " + JSON.stringify(_collection.todos));
+	$.listView.sections[0].setItems(_collection.todos);
+});
+
+function destroy(){
+	
+}
+/*
 $.todoTable.updateContent = function(_rows) {
 	var rows = [],
 	    i = 0,
@@ -25,8 +34,5 @@ $.todoTable.addEventListener('click', function(e) {
 
 Ti.App.addEventListener('app:update_list', function(_collection) {
 	Ti.API.info("UPDATE LIST: " + JSON.stringify(_collection.todos));
-	_collection.todos.forEach(function(row) {
-		row.color = "#000";
-	});
 	$.todoTable.updateContent(_collection.todos);
-});
+});*/
